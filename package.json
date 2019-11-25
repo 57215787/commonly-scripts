@@ -1,13 +1,22 @@
 {
-  "name": "commonly-used",
-  "version": "1.0.0",
+  "name": "commonly-scripts",
+  "version": "1.0.1",
   "main": "index.js",
-  "repository": "https://github.com/57215787/commonly-used.git",
-  "author": "jason.guo <ghlwyyx@sina.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/57215787/commonly-scripts.git"
+  },
+  "author": "jason.guo",
+  "description": "",
+  "files": ["lib", "dist"],
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
+    "build": "rimraf ./lib && tsc",
+    "dev": "tsc --watch",
+    "release": "rimraf ./lib && npm run build && npm pub"
   },
-  "homepage": ""
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "typescript": "^3.0.3"
+  }
 }
