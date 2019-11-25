@@ -1,0 +1,13 @@
+{
+  "name": "commonly-used",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/57215787/commonly-used.git",
+  "author": "jason.guo <ghlwyyx@sina.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "homepage": ""
+}
