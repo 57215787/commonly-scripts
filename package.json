@@ -8,7 +8,7 @@
   },
   "author": "jason.guo",
   "description": "",
-  "files": ["lib", "dist"],
+  "files": ["lib"],
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./lib && tsc",
