@@ -11,7 +11,7 @@ if (inBrowser) {
                 passiveSupported = true;
             }
         })
-        window.addEventListener('test-passive', null, options)
+        window.addEventListener('test-passive', null as any, options)
     } catch (error) {
 
     }
@@ -19,14 +19,18 @@ if (inBrowser) {
 
 
 export function on(target: HTMLElement | Document | Window, type: string, listener: EventListener, passive: boolean = false): void {
-    target.addEventListener(type, listener, passiveSupported ? {
-        capture: false, passive
-    } : false)
+    if (inBrowser) {
+        target.addEventListener(type, listener, passiveSupported ? {
+            capture: false, passive
+        } : false)
+    }
 }
 
 
 export function off(target: HTMLElement | Document | Window, type: string, listener: EventListener): void {
-    target.removeEventListener(type, listener)
+    if (inBrowser) {
+        target.removeEventListener(type, listener)
+    }
 }
 
 export function stopPropagation(event: Event) {
@@ -35,5 +39,11 @@ export function stopPropagation(event: Event) {
 
 
 export function preventDefault(event: Event, isStopPropagation?: boolean) {
-    if (typeof event.cancelBubble)
+    if (typeof event.cancelBubble !== 'boolean' || event.cancelBubble) {
+        event.preventDefault()
+    }
+
+    if (isStopPropagation) {
+        stopPropagation(event)
+    }
 }
