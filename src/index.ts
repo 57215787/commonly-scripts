@@ -23,3 +23,5 @@ export * from './toNumber';
 export * from './toString';
 export * from './toRawType';
 export * from './toTypeString';
+export * from './debug';
+export * from './hasLocation';
