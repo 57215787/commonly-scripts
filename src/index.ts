@@ -25,3 +25,7 @@ export * from './toRawType';
 export * from './toTypeString';
 export * from './debug';
 export * from './hasLocation';
+export * from './isHtmlElement';
+export * from './isLocalhost';
+export * from './isFile';
+export * from './isURLSearchParams';
