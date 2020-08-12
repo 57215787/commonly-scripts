@@ -29,3 +29,5 @@ export * from './isHtmlElement';
 export * from './isLocalhost';
 export * from './isFile';
 export * from './isURLSearchParams';
+export * from "./isVNode"
+export * from "./globalThis"
